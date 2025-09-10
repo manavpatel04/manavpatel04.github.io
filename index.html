@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Manav Patel</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">
+      Manav<span>&nbsp;Patel</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="welcome">
+    <div class="welcome-text">
+      <h1>Hi! I'm <span>Manav Atulbhai Patel</span></h1>
+      <p>
+        A passionate web developer focused on building clean, creative, and professional websites.
+        Turning ideas into elegant solutions with attention to detail and modern design principles.
+      </p>
+      <div class="btn-container">
+        <a href="#about" class="btn"><i class="fas fa-user"></i>Know More</a>
+        <a href="#contact" class="btn"><i class="fas fa-paper-plane"></i>Hire Me</a>
+        <a href="#" class="btn btn-outline"><i class="fas fa-download"></i>Download Resume</a>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="profilephoto.jpg" alt="Manav Patel" class="profile-image">
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h1 class="me">About Me</h1>
+    <div class="underline"></div>
+    <p>
+      I am a dedicated developer with a strong interest in front-end design and user experience.
+      I enjoy creating websites that are visually appealing, responsive, and user-friendly. With a focus on clean code
+      and modern design practices, I strive to deliver solutions that exceed expectations.
+    </p>
+    <p>
+      My approach combines technical expertise with an eye for design, ensuring that every project I work on is both
+      functional and beautiful. I believe in continuous learning and staying updated with the latest industry trends.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h1 class="me">My Skills</h1>
+    <div class="underline"></div>
+    <div class="skills-container">
+      <div class="skill-card">
+        <i class="fab fa-html5"></i>
+        <h3>HTML5</h3>
+        <p>Semantic Markup</p>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-css3-alt"></i>
+        <h3>CSS3</h3>
+        <p>Modern Styling</p>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-js"></i>
+        <h3>JavaScript</h3>
+        <p>ES6+ Features</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Responsive Design</h3>
+        <p>Mobile First</p>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-git-alt"></i>
+        <h3>Git</h3>
+        <p>Version Control</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-code-branch"></i>
+        <h3>Web Development</h3>
+        <p>Modern Practices</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h1 class="me">Contact Me</h1>
+    <div class="underline"></div>
+    <p>Let's connect for opportunities and collaborations! Feel free to reach out for project discussions or job
+      opportunities.</p>
+    <a href="mailto:manavpatel1934@gmail.com" class="btn"><i class="fas fa-envelope"></i>Hire Me</a>
+
+    <div class="social-links">
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Manav Patel. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar ul li a");
+    const navbar = document.querySelector(".navbar");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+
+      // Add scrolled class to navbar
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+</body>
+
+</html>
