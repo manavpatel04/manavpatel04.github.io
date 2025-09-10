@@ -98,6 +98,7 @@ html {
 .welcome-text {
   max-width: 600px;
   z-index: 2;
+  padding: 0 40px;
 }
 
 .welcome h1 {
@@ -223,8 +224,8 @@ html {
 }
 
 .skills-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
   justify-content: center;
   gap: 25px;
   max-width: 900px;
@@ -304,11 +305,16 @@ footer {
   .welcome {
     flex-direction: column;
     text-align: center;
-    padding: 0 30px;
+    padding: 0 50px;
   }
 
   .welcome-text {
     margin-bottom: 50px;
+    padding: 10px 20px;
+  }
+
+  .skills-container {
+    grid-template-columns: auto auto;
   }
 
   .image-container {
@@ -330,11 +336,24 @@ footer {
 }
 
 @media (max-width: 768px) {
-  body{
+  body {
     margin-top: 150px;
   }
+  .welcome {
+    padding: 0px 40p;
+  }
+  .welcome-text {
+    max-width: 300px;
+    padding: 0 10px;
+    margin-bottom: 30px;
+  }
   .welcome h1 {
+    max-width: 300px;
     font-size: 2.2rem;
+  }
+
+  .skills-container {
+    grid-template-columns: auto auto;
   }
 
   .me {
